@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-zuul" />
+        <module name="service-order" />
+        <module name="api-passenger" />
+        <module name="url-versin" />
+        <module name="service-passenger-user" />
+        <module name="cloud-eureka" />
+        <module name="url-version" />
+        <module name="api_consumer" />
+        <module name="internal-common" />
+        <module name="service-sms" />
+        <module name="service-verification-code" />
+        <module name="apidriver" />
+        <module name="api-listen-order" />
+        <module name="service-pay" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-listen-order" target="1.8" />
+      <module name="api-passenger" target="1.8" />
+      <module name="api_consumer" target="1.8" />
+      <module name="apidriver" target="1.8" />
+      <module name="cloud-eureka" target="1.8" />
+      <module name="cloud-zuul" target="1.8" />
+      <module name="internal-common" target="1.8" />
+      <module name="online-taix-three" target="1.5" />
+      <module name="service-order" target="1.8" />
+      <module name="service-passenger-user" target="1.8" />
+      <module name="service-pay" target="1.8" />
+      <module name="service-sms" target="1.8" />
+      <module name="service-verification-code" target="1.8" />
+      <module name="url-versin" target="1.8" />
+      <module name="url-version" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-listen-order" options="-parameters" />
+      <module name="api-passenger" options="-parameters" />
+      <module name="api_consumer" options="-parameters" />
+      <module name="apidriver" options="-parameters" />
+      <module name="cloud-eureka" options="-parameters" />
+      <module name="cloud-zuul" options="-parameters" />
+      <module name="service-order" options="-parameters" />
+      <module name="service-passenger-user" options="-parameters" />
+      <module name="service-pay" options="-parameters" />
+      <module name="url-versin" options="-parameters" />
+      <module name="url-version" options="-parameters" />
+    </option>
+  </component>
+</project>

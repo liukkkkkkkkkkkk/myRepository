@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: online-taxi-zuul
+  redis:
+    port: 6379
+    host: 192.168.33.104
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+server:
+  port: 9100
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka
+
+# 添加ribbon的超时时间设置
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+
+#mybatis:
+#  mapper-locations:
+#    - classpath: mapper/*.xml
+
+mybatis:
+  mapper-locations:
+     - classpath:mapper/*.xml
+
+
+zuul:
+  routes:
+    mycustom-zuul-name:  #自定义的的名字随便取
+      path: /mycustom-zuul/**   # 访问 http://localhost:9100/mycustom-zuul/send/test  等同于 http://localhost:9100/service-sms/send/test
+      service-id: service-sms
+    mycustom-zuul-name2:
+      path: /mycustom-zuul2/**   # 访问 http://localhost:9100/mycustom-zuul/send/test  等同于 http://localhost:9100/service-sms/send/test
+      service-id: api-driver
+
+
+#    mycustom-zuul-name2:
+#      path: /mycustom-zuul2/**   # 访问 http://localhost:9100/mycustom-zuul/send/test  等同于 http://localhost:9100/service-sms/send/test
+#      service-id: api-driver
+
+
+  strip-prefix: true   # 默认true  表示向后端服务转发时，会将定义的前缀 api 从url里移除  http://localhost:9100/api/mycustom-zuul/send/test
+  ignored-services:
+    - api-driver  #禁止通过 http://localhost:9100/api/api-driver/test  服务名直接访问服务pi-driver/   要通过自定义url  http://localhost:9100/api/mycustom-zuul2/test
+  prefix: /api

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mashibing</groupId>
+    <artifactId>online-taix-three</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>service-verification-code</module>
+        <module>service-sms</module>
+        <module>api-passenger</module>
+        <module>service-passenger-user</module>
+        <module>internal-common</module>
+        <module>cloud-eureka</module>
+        <module>api_consumer</module>
+        <module>cloud-zuul</module>
+    </modules>
+</project>

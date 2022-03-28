@@ -1,0 +1,36 @@
+server:
+  port: 8011
+
+eureka:
+  client:
+    service-url:
+     # defaultZone :  http://localhost:7900/eureka, http://localhost:7901/eureka, http://localhost:7902/eureka
+      defaultZone :  http://localhost:7900/eureka
+      instance:
+        hostname: api-passenger
+spring:
+  application:
+    name: api-passenger
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+zone:
+  name: ssss
+
+
+
+logging:
+  level:
+    root: info
+
+#ribbon:
+#  eager-load:
+#    enabled: true
+#    clients: demo
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+

@@ -1,0 +1,114 @@
+spring:
+  application:
+    name: online-taxi-zuul
+  redis:
+    port: 6379
+    host: 192.168.33.104
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+server:
+  port: 9100
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka
+
+# 添加ribbon的超时时间设置
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+#  eureka:
+#    enabled: false
+
+
+
+#mybatis:
+#  mapper-locations:
+#    - classpath: mapper/*.xml
+
+mybatis:
+  mapper-locations:
+     - classpath:mapper/*.xml
+
+
+zuul:
+  routes:
+    mycustom-zuul-name0:
+      #网关将请求转发给自己处理    url: forward:
+      path: /to-forward/**
+      url: forward:/mycontroller/test
+    mycustom-zuul-name00:
+      #网关将请求转发给自己处理    url: forward:
+      path: /to-forward1/**
+      url: forward:/myController/
+    #服务名配置
+    api-driver:  /zuul-api-driver/**     #   通过配置的 /zuul-api-driver/** url访问 api-driver服务  http://localhost:9100/zuul-api-driver/test
+    api-passenger: /zuul-api-passenger/**
+    #自定义的的服务名随便取 通过定义的path访问服务
+    mycustom-zuul-name:
+      path: /mycustom-zuul/**   # 访问 http://localhost:9100/mycustom-zuul/send/test  等同于 http://localhost:9100/service-sms/send/test
+      service-id: service-sms
+    mycustom-zuul-name2:
+      path: /mycustom-zuul2/**   # 访问 http://localhost:9100/mycustom-zuul2/test  等同于 http://localhost:9100/api-driver/test
+      service-id: api-driver
+      # 通过path  /mycustom-zuul3/**  转发到固定的url  http://localhost:9100/mycustom-zuul3/send/test
+    mycustom-zuul-name3:
+      path: /mycustom-zuul3/**
+      url: http://localhost:8041/ #这样写，网关的ribbon负载均衡会失效
+    mycustom-zuul-name4:
+      path: /mycustom-zuul4/**
+      service-id: noo-eureka-sms #service-sms    #不是eureka的service-id,是我们自定义的，名称随便定义
+   # mycustom-zuul-name5: /xxoo-ooxx/**  没试出来啊
+
+  sensitive-headers:    #该配置为空表示：所有请求头都透传到后面微服务。 默认敏感信息头 Cookie", "Set-Cookie", "Authorization" 不向后端服务传
+
+
+noo-eureka-sms:
+  ribbon:
+    listOfServers: localhost:8041,localhost:8042   #不知道为啥调不行啦 ？？
+
+
+
+#no-eureka-service-sms:
+#  ribbon:
+#    listOfServers: http://localhost:8041/,http://localhost:8042/
+#no-eureka-service-sms:
+#  ribbon:
+#    listOfServers: localhost:8041/,localhost:8042/
+
+
+  strip-prefix: true   # 默认true  表示向后端服务转发时，会将定义的前缀 api 从url里移除  http://localhost:9100/api/mycustom-zuul/send/test
+  ignored-services:
+    - api-driver  #禁止通过 http://localhost:9100/api/api-driver/test  服务名直接访问服务pi-driver/   要通过自定义url  http://localhost:9100/api/mycustom-zuul2/test
+  #prefix: /api
+
+
+com:
+  mashibing:
+    name: king
+    hobby: basketball
+
+logging:
+  level:
+    root: info
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      ##默认是never
+      show-details: ALWAYS
+      enabled: true
+    routes:
+      enabled: true
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-listen-order/api-listen-order.iml" filepath="$PROJECT_DIR$/api-listen-order/api-listen-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-passenger/api-passenger.iml" filepath="$PROJECT_DIR$/api-passenger/api-passenger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api_consumer/api_consumer.iml" filepath="$PROJECT_DIR$/api_consumer/api_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apidriver/apidriver.iml" filepath="$PROJECT_DIR$/apidriver/apidriver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-eureka/cloud-eureka.iml" filepath="$PROJECT_DIR$/cloud-eureka/cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-zuul/cloud-zuul.iml" filepath="$PROJECT_DIR$/cloud-zuul/cloud-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/internal-common/internal-common.iml" filepath="$PROJECT_DIR$/internal-common/internal-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/online-taix-three.iml" filepath="$PROJECT_DIR$/.idea/online-taix-three.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-order/service-order.iml" filepath="$PROJECT_DIR$/service-order/service-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-passenger-user/service-passenger-user.iml" filepath="$PROJECT_DIR$/service-passenger-user/service-passenger-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-pay/service-pay.iml" filepath="$PROJECT_DIR$/service-pay/service-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-sms/service-sms.iml" filepath="$PROJECT_DIR$/service-sms/service-sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-verification-code/service-verification-code.iml" filepath="$PROJECT_DIR$/service-verification-code/service-verification-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo1/url-versin.iml" filepath="$PROJECT_DIR$/demo1/url-versin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/url-version.iml" filepath="$PROJECT_DIR$/demo/url-version.iml" />
+    </modules>
+  </component>
+</project>

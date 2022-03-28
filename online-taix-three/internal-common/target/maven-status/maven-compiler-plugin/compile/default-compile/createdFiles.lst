@@ -1,0 +1,17 @@
+com\mashibing\internalcommon\constant\HttpUrlConstants.class
+com\mashibing\internalcommon\dto\servicesms\request\SmsSendRequest.class
+com\mashibing\internalcommon\util\OrderIdUtils.class
+com\mashibing\internalcommon\util\JwtInfo.class
+com\mashibing\internalcommon\dto\ResponseResult.class
+com\mashibing\internalcommon\dto\service\verifycode\response\VerifyCodeResponse.class
+com\mashibing\internalcommon\InternalCommonApplication.class
+com\mashibing\internalcommon\util\RedisKeyUtil.class
+com\mashibing\internalcommon\util\SnowflakeUtils.class
+com\mashibing\internalcommon\dto\servicesms\SmsTemplateDto.class
+com\mashibing\internalcommon\constant\CommonStatusEnum.class
+com\mashibing\internalcommon\constant\IdentityConstant.class
+com\mashibing\internalcommon\dto\service\verifycode\request\VerifyCodeRequest.class
+com\mashibing\internalcommon\util\JwtUtil.class
+com\mashibing\internalcommon\dto\passageruser\request\LoginRequest.class
+com\mashibing\internalcommon\dto\servicevificationcode\VerificationCodeResponse.class
+com\mashibing\internalcommon\constant\RedisKeyPrefixConstant.class

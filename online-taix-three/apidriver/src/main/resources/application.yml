@@ -1,0 +1,10 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: api-driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka

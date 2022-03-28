@@ -1,0 +1,52 @@
+server:
+  port: 7900
+spring:
+  application:
+    name: cloud-eureka
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka, http://eureka-7901:7901/eureka, http://eureka-7902:7902/eureka
+  server:
+    enable-self-preservation: false
+    renewal-percent-threshold: 0.85   #默认自我保触发的条件85服务挂掉%
+    eviction-interval-timer-in-ms: 1000  #清除无效服务实例的时间间隔（ms），默认1分钟
+    use-read-only-response-cache: false  #关闭从readOnly读注册表
+    response-cache-update-interval-ms: 1000 #readWrite和readOnly同步时间间隔
+---
+spring:
+  profiles: 7900
+server:
+  port: 7900
+eureka:
+  instance:
+    hostname: eureka-7900
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka
+
+---
+spring:
+  profiles: 7901_p
+server:
+  port: 7901
+eureka:
+  instance:
+    hostname: eureka-7901
+
+
+---
+spring:
+  profiles: 7902_p
+server:
+  port: 7902
+eureka:
+  instance:
+    hostname: eureka-7902
