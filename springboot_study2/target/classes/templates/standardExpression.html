@@ -1,0 +1,80 @@
+<!--
+一、strings：字符串格式化方法，常用的Java方法它都有。比如：equals，equalsIgnoreCase，length，trim，toUpperCase，toLowerCase，indexOf，substring，replace，startsWith，endsWith，contains，containsIgnoreCase等
+
+二、numbers：数值格式化方法，常用的方法有：formatDecimal等
+
+三、bools：布尔方法，常用的方法有：isTrue，isFalse等
+
+四、arrays：数组方法，常用的方法有：toArray，length，isEmpty，contains，containsAll等
+
+五、lists，sets：集合方法，常用的方法有：toList，size，isEmpty，contains，containsAll，sort等
+
+六、maps：对象方法，常用的方法有：size，isEmpty，containsKey，containsValue等
+
+七、dates：日期方法，常用的方法有：format，year，month，hour，createNow等
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf内置方法</title>
+</head>
+<body>
+<h3>#strings </h3>
+<div th:if="${not #strings.isEmpty(Str)}" >
+    <p>Old Str : <span th:text="${Str}"/></p>
+    <p>toUpperCase : <span th:text="${#strings.toUpperCase(Str)}"/></p>
+    <p>toLowerCase : <span th:text="${#strings.toLowerCase(Str)}"/></p>
+    <p>equals : <span th:text="${#strings.equals(Str, 'blog')}"/></p>
+    <p>equalsIgnoreCase : <span th:text="${#strings.equalsIgnoreCase(Str, 'blog')}"/></p>
+    <p>indexOf : <span th:text="${#strings.indexOf(Str, 'r')}"/></p>
+    <p>substring : <span th:text="${#strings.substring(Str, 2, 4)}"/></p>
+    <p>replace : <span th:text="${#strings.replace(Str, 'it', 'IT')}"/></p>
+    <p>startsWith : <span th:text="${#strings.startsWith(Str, 'it')}"/></p>
+    <p>contains : <span th:text="${#strings.contains(Str, 'IT')}"/></p>
+</div>
+<h3>#numbers </h3>
+<div>
+    <p>formatDecimal 整数部分随意，小数点后保留两位，四舍五入: <span th:text="${#numbers.formatDecimal(Num, 0, 2)}"/></p>
+    <p>formatDecimal 整数部分保留五位数，小数点后保留两位，四舍五入: <span th:text="${#numbers.formatDecimal(Num, 5, 2)}"/></p>
+</div>
+
+<h3>#bools </h3>
+<div th:if="${#bools.isTrue(Bool)}">
+    <p th:text="${Bool}"></p>
+</div>
+
+<h3>#arrays </h3>
+<div th:if="${not #arrays.isEmpty(Array)}">
+    <p>length : <span th:text="${#arrays.length(Array)}"/></p>
+    <p>contains : <span th:text="${#arrays.contains(Array,2)}"/></p>
+    <p>containsAll : <span th:text="${#arrays.containsAll(Array, Array)}"/></p>
+</div>
+<h3>#lists </h3>
+<div th:if="${not #lists.isEmpty(List)}">
+    <p>size : <span th:text="${#lists.size(List)}"/></p>
+    <p>contains : <span th:text="${#lists.contains(List, 0)}"/></p>
+    <p>sort : <span th:text="${#lists.sort(List)}"/></p>
+</div>
+<h3>#maps </h3>
+<div th:if="${not #maps.isEmpty(hashMap)}">
+    <p>size : <span th:text="${#maps.size(hashMap)}"/></p>
+    <p>containsKey : <span th:text="${#maps.containsKey(hashMap, 'thName')}"/></p>
+    <p>containsValue : <span th:text="${#maps.containsValue(hashMap, '#maps')}"/></p>
+</div>
+<h3>#dates </h3>
+<div>
+    <p>format : <span th:text="${#dates.format(Date)}"/></p>
+    <p>custom format : <span th:text="${#dates.format(Date, 'yyyy-MM-dd HH:mm:ss')}"/></p>
+    <p>day : <span th:text="${#dates.day(Date)}"/></p>
+    <p>month : <span th:text="${#dates.month(Date)}"/></p>
+    <p>monthName : <span th:text="${#dates.monthName(Date)}"/></p>
+    <p>year : <span th:text="${#dates.year(Date)}"/></p>
+    <p>dayOfWeekName : <span th:text="${#dates.dayOfWeekName(Date)}"/></p>
+    <p>hour : <span th:text="${#dates.hour(Date)}"/></p>
+    <p>minute : <span th:text="${#dates.minute(Date)}"/></p>
+    <p>second : <span th:text="${#dates.second(Date)}"/></p>
+    <p>createNow : <span th:text="${#dates.createNow()}"/></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+643  [main] DEBUG HelloSLF4J - 222222
+650  [main] INFO  HelloSLF4J - 3333333
+650  [main] WARN  HelloSLF4J - 44444
+650  [main] ERROR HelloSLF4J - 5555555
+337  [main] DEBUG HelloSLF4J - 222222
+342  [main] INFO  HelloSLF4J - 3333333
+342  [main] WARN  HelloSLF4J - 44444
+342  [main] ERROR HelloSLF4J - 5555555
+217  [main] DEBUG HelloSLF4J - 222222
+219  [main] INFO  HelloSLF4J - 3333333
+219  [main] WARN  HelloSLF4J - 44444
+219  [main] ERROR HelloSLF4J - 5555555
+219  [main] INFO  HelloSLF4J - hello world java ,python
+155  [main] DEBUG HelloSLF4J - 222222
+157  [main] INFO  HelloSLF4J - 3333333
+157  [main] WARN  HelloSLF4J - 44444
+157  [main] ERROR HelloSLF4J - 5555555
+157  [main] INFO  HelloSLF4J - hello world java ,python
+207  [main] DEBUG HelloSLF4J - 222222
+209  [main] INFO  HelloSLF4J - 3333333
+210  [main] WARN  HelloSLF4J - 44444
+210  [main] ERROR HelloSLF4J - 5555555
+210  [main] INFO  HelloSLF4J - hello world java ,python

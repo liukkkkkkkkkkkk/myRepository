@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.msb.SpringbootStudyApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.243 s - in com.msb.SpringbootStudyApplicationTests

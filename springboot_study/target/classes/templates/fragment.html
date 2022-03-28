@@ -1,0 +1,47 @@
+<!--
+支持两种语法结构
+推荐：~{templatename::fragmentname}
+支持：~{templatename::#id}
+templatename：模版名，Thymeleaf会根据模版名解析完整路：/resources/templates/templatename.html，要注意文件的路径。
+fragmentname：片段名，Thymeleaf通过th:fragment声明定义代码块，即：th:fragment="fragmentname"
+id：HTML的id选择器，使用时要在前面加上#号，不支持class选择器。
+
+代码块表达式的使用
+代码块表达式需要配合th属性（th:insert，th:replace，th:include）一起使用。
+th:insert：将代码块片段整个插入到使用了th:insert的HTML标签中，
+th:replace：将代码块片段整个替换使用了th:replace的HTML标签中，
+th:include：将代码块片段包含的内容插入到使用了th:include的HTML标签中，
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--th:fragment定义代码块标识-->
+<footer th:fragment="copy">
+    2019 The Good Thymes Virtual Grocery
+</footer>
+
+<!--三种不同的引入方式-->
+<div th:insert="fragment::copy"></div>
+<div th:replace="fragment::copy"></div>
+<div th:include="fragment::copy"></div>
+
+<!--th:insert是在div中插入代码块，即多了一层div-->
+<div>
+    <footer>
+        &copy; 2011 The Good Thymes Virtual Grocery
+    </footer>
+</div>
+<!--th:replace是将代码块代替当前div，其html结构和之前一致-->
+<footer>
+    &copy; 2011 The Good Thymes Virtual Grocery
+</footer>
+<!--th:include是将代码块footer的内容插入到div中，即少了一层footer-->
+<div>
+    &copy; 2011 The Good Thymes Virtual Grocery
+</div>
+</body>
+</html>
