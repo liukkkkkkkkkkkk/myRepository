@@ -1,3 +1,0 @@
-你好，java
-hello,world
-ddddd
